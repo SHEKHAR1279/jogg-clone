@@ -1,0 +1,40 @@
+import React, { useEffect, useState } from 'react';
+import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
+import { Bar } from 'react-chartjs-2';
+
+ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+
+export default function Dashboard() {
+  const [activities, setActivities] = useState([]);
+  
+  // Sample data - replace with Firebase data
+  const data = {
+    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+    datasets: [
+      {
+        label: 'Running Distance (km)',
+        data: [5, 7, 3, 8, 4, 10, 6],
+        backgroundColor: 'rgba(75, 192, 192, 0.6)',
+      },
+    ],
+  };
+
+  return (
+    <div className="dashboard">
+      <h2>Your Weekly Activity</h2>
+      <div className="chart-container">
+        <Bar data={data} />
+      </div>
+      <div className="stats">
+        <div className="stat-card">
+          <h3>Total Distance</h3>
+          <p>43 km</p>
+        </div>
+        <div className="stat-card">
+          <h3>Average Pace</h3>
+          <p>5:30 /km</p>
+        </div>
+      </div>
+    </div>
+  );
+}
