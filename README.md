@@ -1,3 +1,3 @@
-# carry on 
-git clone https://github.com/YOUR-USERNAME/carry on.git
-cd carry on
+# jogg-clone 
+git clone https://github.com/YOUR-USERNAME/jogg-clone.git
+cd jogg-clone
